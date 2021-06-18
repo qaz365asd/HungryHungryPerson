@@ -5,4 +5,12 @@
     <string name="title_setting">Settings</string>
     <string name="title_search">Search</string>
     <string name="title_direction">Direction</string>
+    <!-- Preference Titles -->
+    <string name="account_header">Account</string>
+    <string name="preferences_header">Preferences</string>
+
+    <!-- Account Preferences -->
+
+    <string name="sample">Sample</string>
+
 </resources>

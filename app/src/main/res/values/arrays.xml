@@ -1,0 +1,8 @@
+<resources>
+    <!-- Reply Preference -->
+    <string-array name="test">
+        <item>Test 1</item>
+        <item>Test 2</item>
+    </string-array>
+
+</resources>

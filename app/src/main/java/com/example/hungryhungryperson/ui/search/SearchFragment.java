@@ -13,10 +13,13 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.hungryhungryperson.R;
+import com.google.android.gms.maps.MapView;
 
 public class SearchFragment extends Fragment {
 
     private SearchViewModel mViewModel;
+    private MapView mMapView;
+
 
     public static SearchFragment newInstance() {
         return new SearchFragment();
