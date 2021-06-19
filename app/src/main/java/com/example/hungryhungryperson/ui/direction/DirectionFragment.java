@@ -12,13 +12,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.hungryhungryperson.BuildConfig;
 import com.example.hungryhungryperson.R;
 import com.example.hungryhungryperson.ui.search.SearchFragment;
 import com.example.hungryhungryperson.ui.search.SearchViewModel;
 import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.MapView;
-import com.google.android.gms.maps.MapsInitializer;
-import com.google.android.gms.maps.OnMapReadyCallback;
+//import com.google.android.gms.maps.MapView;
+//import com.google.android.gms.maps.MapsInitializer;
+//import com.google.android.gms.maps.OnMapReadyCallback;
+import org.osmdroid.config.Configuration;
+import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
+import org.osmdroid.views.MapView;
 
 public class DirectionFragment extends Fragment {
 
@@ -32,18 +36,13 @@ public class DirectionFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
+        Configuration.getInstance().setUserAgentValue(BuildConfig.APPLICATION_ID);
         View rootView = inflater.inflate(R.layout.fragment_direction, container, false);
-
         mMapView = (MapView) rootView.findViewById(R.id.mapView);
-        mMapView.onCreate(savedInstanceState);
+        //mMapView.onCreate(savedInstanceState);
+        mMapView.setTileSource(TileSourceFactory.MAPNIK);
 
         return rootView;
-    }
-
-    @Override
-    public void onStart(){
-        super.onStart();
-        mMapView.onStart();
     }
 
     @Override
@@ -56,6 +55,13 @@ public class DirectionFragment extends Fragment {
     public void onPause(){
         super.onPause();
         mMapView.onPause();
+    }
+
+    /*
+    @Override
+    public void onStart(){
+        super.onStart();
+        mMapView.onStart();
     }
 
     @Override
@@ -81,6 +87,7 @@ public class DirectionFragment extends Fragment {
         super.onSaveInstanceState(outState);
         mMapView.onSaveInstanceState(outState);
     }
+    */
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {

@@ -6,7 +6,7 @@
     android:orientation="vertical"
     tools:context=".ui.direction.DirectionFragment">
 
-    <com.google.android.gms.maps.MapView
+    <org.osmdroid.views.MapView
         android:id="@+id/mapView"
         android:layout_width="match_parent"
         android:layout_height="396dp" />
